@@ -6,8 +6,8 @@ public interface BasicDAO {
 
     User getUserByID(int userID) throws Exception;
     List<User> getAllUsers();
-    void addUser();
-    void deleteUser();
-    User getUserByEmailAndPassword();
+    void addUser(User user);
+    void deleteUser(User user);
+    User getUserByEmailAndPassword(User user);
     
 } 
