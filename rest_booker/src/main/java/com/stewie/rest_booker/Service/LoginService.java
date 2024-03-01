@@ -1,5 +1,5 @@
 package com.stewie.rest_booker.Service;
 
-public class LoginService {
-    
+public interface LoginService {
+    boolean validateUser(String name, String password);
 }

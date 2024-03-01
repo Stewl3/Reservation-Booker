@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-RestBookerApplication<rest_booker>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.stewie.rest_booker.RestBookerApplication",
+      "projectName": "rest_booker",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
