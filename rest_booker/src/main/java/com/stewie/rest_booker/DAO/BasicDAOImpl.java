@@ -2,10 +2,13 @@ package com.stewie.rest_booker.DAO;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import org.springframework.stereotype.Service;
+
 import java.sql.*;
 
 import com.stewie.rest_booker.Database.DatabaseManager;
-
+@Service
 public class BasicDAOImpl implements BasicDAO {
 
     public Connection startConnection() {
