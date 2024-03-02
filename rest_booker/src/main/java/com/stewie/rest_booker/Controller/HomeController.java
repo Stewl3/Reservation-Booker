@@ -6,14 +6,15 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-@RequestMapping(value = {"/"})
+@RequestMapping(value = { "/" })
 public class HomeController {
-    
+
     @GetMapping
     public ModelAndView homeView() {
         ModelAndView model = new ModelAndView();
 
-        model.setViewName("index");
+        model.setViewName("Home");
+        
         return model;
     }
 

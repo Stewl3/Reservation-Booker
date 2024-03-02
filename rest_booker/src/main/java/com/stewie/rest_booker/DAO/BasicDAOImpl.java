@@ -3,12 +3,10 @@ package com.stewie.rest_booker.DAO;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.stereotype.Service;
-
 import java.sql.*;
 
 import com.stewie.rest_booker.Database.DatabaseManager;
-@Service
+
 public class BasicDAOImpl implements BasicDAO {
 
     public Connection startConnection() {
@@ -57,7 +55,7 @@ public class BasicDAOImpl implements BasicDAO {
     public void addUser(User user) {
         try (PreparedStatement statement = startConnection()
                 .prepareStatement(
-                        "INSERT INTO users (ID, 'firstName', 'lastName', 'userEmail', 'userPassword') VALUES (?,?,?,?,?)")) {
+                        "INSERT INTO users (ID, firstName, lastName, userEmail, userPassword) VALUES (?,?,?,?,?)")) {
             statement.setInt(1, user.getUserID());
             statement.setString(2, user.getUserFirstName());
             statement.setString(3, user.getUserLastName());
@@ -105,7 +103,7 @@ public class BasicDAOImpl implements BasicDAO {
         User user = new User();
         user.setUserID(resultSet.getInt("ID"));
         user.setUserEmail("j.smith@email.com");
-        user.setUserPassword("password123*");
+        user.setUserPassword("Password123*");
         return user;
     }
 }
