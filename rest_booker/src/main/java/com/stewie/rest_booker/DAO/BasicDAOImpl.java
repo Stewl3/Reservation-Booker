@@ -99,6 +99,18 @@ public class BasicDAOImpl implements BasicDAO {
         return null;
     }
 
+    public Reservation reservation(Reservation reservation) {
+        try (PreparedStatement statement = startConnection().prepareStatement(
+                "Insert into bookings (ClientFirstName, ClientLastName, bookingDate, bookingTime) Values (?,?,?,?)")) {
+            statement.setString(1, reservation.getFirstName());
+            statement.setString(2, reservation.getLastName());
+            statement.setTime(3, reservation.getTime());
+            statement.setDate(4, reservation.getDate());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     private User extractUserFromResultSet(ResultSet resultSet) throws SQLException {
         User user = new User();
         user.setUserID(resultSet.getInt("ID"));
